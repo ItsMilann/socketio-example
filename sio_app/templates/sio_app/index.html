@@ -11,6 +11,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.min.js"></script>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
   <script src="./index.js"></script>
 </head>
 
@@ -26,11 +27,16 @@
       <div class="col-12 mb-3" id="message_box">
       </div>
       <div class="col-12 mt-3">
-        <input type="text" class="w-75 d-inline form-control" placeholder="Write something..." id="input_field"/>
-        <button class="btn btn-primary d-inline" onclick="sendMessage()">Send</button>
+        <form onsubmit="sendMessage(event)">
+          <input type="text" class="w-75 d-inline form-control" placeholder="Press Enter to send" id="input_field" />
+          <button class="btn btn-primary d-inline" type="submit">
+            <i class="fa fa-paper-plane" aria-hidden="true"></i>
+          </button>
+        </form>
       </div>
     </div>
   </div>
+  {% include 'sio_app/scripts.html' %}
 </body>
 
 </html>

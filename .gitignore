@@ -43,5 +43,6 @@ venv*
 tags
 htmlcov
 *.swp
-
+other
 node_modules
+db.sqlite3
